@@ -181,7 +181,8 @@ export default function Carousel({
                 justifyContent: "center",
                 fontFamily: "Impact",
                 fontSize: "16px",
-                width: "100%"
+                width: "100%",
+                height: "10px"
               }}>LET'S COOK APP</h4>
               <div style={{ 
                 display: "flex",
@@ -189,6 +190,7 @@ export default function Carousel({
                 alignItems: "center",
                 justifyContent: "center",
                 width: "100%",
+                height: "15px",
                 fontFamily: "Impact",
                 fontSize: "12px",
               }}>

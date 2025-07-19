@@ -133,8 +133,8 @@ export default function Home() {
           <h3 style={{ fontFamily: "Impact" }}>Contact</h3>
         </div>
         <div className="contact-container">
-          <div className="contact-info" style={{ fontFamily: "Impact" }}>
-            <h3 style={{ color: "#44bcad" }}>MY INFO</h3>
+          <div className="contact-info" style={{ fontFamily: "Impact"}}>
+            <h3 style={{ color: "#44bcad", textDecoration:"underline"}}>MY INFO</h3>
             <p>Carlos Ramírez Torres</p>
             <p>+34 639 026 788</p>
             <p>crt.981995@gmail.com</p>
@@ -142,11 +142,11 @@ export default function Home() {
           <div>
             <form style={{ fontFamily: "Impact" }} ref={form} onSubmit={sendEmail}>
               <label htmlFor="user_name">Name</label>
-              <input type="text" id="user_name" name="name" required/>
+              <input type="text" id="user_name" name="name" placeholder="Name" required />
               <label htmlFor="user_email">Email</label>
-              <input type="text" id="user_email" name="email" required/>
+              <input type="text" id="user_email" name="email" placeholder="Email" required/>
               <label htmlFor="message">Message</label>
-              <textarea id="message" name="message" cols="30" rows="4" required></textarea>
+              <textarea id="message" name="message" cols="30" rows="4" placeholder="Write a comment" required></textarea>
               <button type="submit">Send</button>
             </form>
           </div>
