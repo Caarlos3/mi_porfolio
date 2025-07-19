@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback, useMemo } from "react";
+import React, { useEffect, useRef, useCallback, useMemo } from "react";
 import "./ProfileCard.css";
 
 const DEFAULT_BEHIND_GRADIENT =
