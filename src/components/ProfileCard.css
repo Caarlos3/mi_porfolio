@@ -61,8 +61,8 @@
   }
   
   .pc-card {
-    height: 250px;
-    max-height: 250px;
+    height: 500px;
+    max-height: 500px;
     display: grid;
     aspect-ratio: 0.718;
     border-radius: var(--card-radius);
@@ -300,7 +300,7 @@
   }
   
   .pc-details h3 {
-    font-weight: 400;
+    font-weight: 800;
     margin: 0;
     font-size: clamp(1rem, 1.2vw, 1.2rem);
     margin-bottom: 10px;
@@ -357,7 +357,7 @@
     }
   
     .pc-details h3 {
-      font-size: 3vh;
+      font-size: 6vh;
     }
   
     .pc-details p {

@@ -25,6 +25,7 @@
   background-color: #000000;
   overflow: hidden;
   cursor: grab;
+  padding-bottom: 20px;
 }
 
 .carousel-item:active {
