@@ -44,7 +44,7 @@ export default function Home() {
         <div className="home-content">
           <div className="about-me">
             <h1 style={{ fontFamily: "Impact" }}>About me</h1>
-            <p style={{ fontSize: "20px", fontFamily: "monospace" }}>
+            <p style={{ fontSize: "20px", fontFamily: "monospace", width: "100%" }}>
               Mi nombre es Carlos Ramírez Torres, Full Stack Developer.
               <br />
               Me apasiona crear aplicaciones web para la resolución de problemas
