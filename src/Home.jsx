@@ -43,8 +43,8 @@ export default function Home() {
       <div className="home-container" id="about-me">
         <div className="home-content">
           <div className="about-me">
-            <h3 style={{ fontFamily: "Impact" }}>About me</h3>
-            <p style={{ fontSize: "10px", fontFamily: "monospace" }}>
+            <h1 style={{ fontFamily: "Impact" }}>About me</h1>
+            <p style={{ fontSize: "20px", fontFamily: "monospace" }}>
               Mi nombre es Carlos Ramírez Torres, Full Stack Developer.
               <br />
               Me apasiona crear aplicaciones web para la resolución de problemas
@@ -52,7 +52,7 @@ export default function Home() {
               desarrollo de aplicaciones utilizando tecnologías como React,
               Javascript, Node.js, Python, Flask, OpenAI API y SQL.
             </p>
-            <div style={{ display: "flex", gap: "10px" }}>
+            <div style={{ display: "flex", gap: "20px" }}>
               <a
                 href="https://www.linkedin.com/in/carlos-ram%C3%ADrez-torres-4391a226b/"
                 target="_blank"
@@ -70,6 +70,13 @@ export default function Home() {
               >
                 <i class="fa-brands fa-github" style={{ color: "#63E6BE" }}></i>
               </a>
+              <a href="/Carlos-Ramírez-CV.pdf"
+                download={"Carlos-Ramírez-CV.pdf"}
+                onClick={() => console.log("CV downloaded")}
+                style={{ color: "#63E6BE", cursor: "pointer" }}>
+              <i class="fa-regular fa-file"></i>
+          
+              </a>
             </div>
           </div>
           <div>
@@ -86,7 +93,7 @@ export default function Home() {
           </div>
         </div>
         <div className="home-tools" style={{ fontFamily: "Impact" }} id="tools">
-          <h3>Tools</h3>
+          <h1>Tools</h1>
           <div className="tools-icons">
             <div className="tools-icons-container">
               <img src="/icons8-css-48.png" alt="" />
@@ -114,7 +121,7 @@ export default function Home() {
         </div>
 
         <div id="projects">
-          <h3 style={{ fontFamily: "Impact" }}>Projects</h3>
+          <h1 style={{ fontFamily: "Impact" }}>Projects</h1>
           <div>
             <div style={{ position: "relative" }}>
               <Carousel
@@ -130,11 +137,11 @@ export default function Home() {
         </div>
 
         <div id="contact">
-          <h3 style={{ fontFamily: "Impact" }}>Contact</h3>
+          <h1 style={{ fontFamily: "Impact" }}>Contact</h1>
         </div>
         <div className="contact-container">
           <div className="contact-info" style={{ fontFamily: "Impact"}}>
-            <h3 style={{ color: "#44bcad", textDecoration:"underline"}}>MY INFO</h3>
+            
             <p>Carlos Ramírez Torres</p>
             <p>+34 639 026 788</p>
             <p>crt.981995@gmail.com</p>
