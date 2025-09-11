@@ -55,7 +55,7 @@ export default function Home() {
               Me apasiona crear aplicaciones web para la resolución de problemas
               y mejora de la vida diaria. Mi experiencia se centra en el
               desarrollo de aplicaciones utilizando tecnologías como React,
-              Javascript, Node.js, Python, Flask, OpenAI API y SQL.
+              Javascript, Java, Node.js, Python, Flask, OpenAI API y SQL.
             </p>
 
             <div class="card-urls">
@@ -140,6 +140,16 @@ export default function Home() {
           <h1 style={{ fontFamily: "Impact" }}>Projects</h1>
           <div>
             <div style={{ position: "relative" }}>
+              <a
+                href="https://github.com/Caarlos3/LET-S-COOK-APP"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  position: "absolute",
+                  inset: 0, 
+                  zIndex: 2,
+                }}
+              />
               <Carousel
                 baseWidth={300}
                 autoplay={true}
@@ -156,11 +166,7 @@ export default function Home() {
           <h1 style={{ fontFamily: "Impact" }}>Contact</h1>
         </div>
         <div className="contact-container">
-          <div className="contact-info" style={{ fontFamily: "Impact" }}>
-            <p>Carlos Ramírez Torres</p>
-            <p>+34 639 026 788</p>
-            <p>crt.981995@gmail.com</p>
-          </div>
+        
           <div>
             <form
               style={{ fontFamily: "Impact" }}
