@@ -6,6 +6,20 @@ import ProfileCard from "./components/ProfileCard";
 import Carousel from "./components/Carousel";
 import Navbar from "./Navbar";
 
+const cookAppItems = [
+  { id: 1, src: "/home-app-cook.png", alt: "Home App Cook" },
+  { id: 2, src: "/user-view-cook.png", alt: "User view App Cook" },
+  { id: 3, src: "/recipe-view.png", alt: "Recipe view App Cook" },
+];
+
+const canCargolItems = [
+  { id: 1, src: "/Can-Caragol1.png", alt: "Can Cargol 1" },
+  { id: 2, src: "/Can-caragol2.png", alt: "Can Cargol 2" },
+  { id: 3, src: "/Can-caragol3.png", alt: "Can Cargol 3" },
+  { id: 4, src: "/Can-caragol4.png", alt: "Can Cargol 4" },
+  { id: 5, src: "/Can-caragol5.png", alt: "Can Cargol 5" },
+];
+
 export default function Home() {
   const form = useRef();
   const sendEmail = (e) => {
@@ -58,34 +72,34 @@ export default function Home() {
               Javascript, Java, Node.js, Python, Flask, OpenAI API y SQL.
             </p>
 
-            <div class="card-urls">
+            <div className="card-urls">
               <ul>
-                <li class="iso-pro">
+                <li className="iso-pro">
                   <span></span>
                   <span></span>
                   <span></span>
                   <a href="https://github.com/Caarlos3">
-                    <i class="fa-brands fa-github svg" aria-label="GitHub"></i>
+                    <i className="fa-brands fa-github svg" aria-label="GitHub"></i>
                   </a>
                 </li>
-                <li class="iso-pro">
+                <li className="iso-pro">
                   <span></span>
                   <span></span>
                   <span></span>
                   <a href="https://www.linkedin.com/in/carlos-ram%C3%ADrez-torres-4391a226b/">
                     <i
-                      class="fa-brands fa-linkedin-in svg"
+                      className="fa-brands fa-linkedin-in svg"
                       aria-label="LinkedIn"
                     ></i>
                   </a>
                 </li>
-                <li class="iso-pro">
+                <li className="iso-pro">
                   <span></span>
                   <span></span>
                   <span></span>
                   <a href="/Carlos-Ramírez-CV.pdf" download>
                     <i
-                      class="fa-solid fa-file-arrow-down svg"
+                      className="fa-solid fa-file-arrow-down svg"
                       aria-label="Descargar CV"
                     ></i>
                   </a>
@@ -138,7 +152,7 @@ export default function Home() {
 
         <div id="projects">
           <h1 style={{ fontFamily: "Impact" }}>Projects</h1>
-          <div>
+          <div style={{ display: "flex", gap: "30px" }}>
             <div style={{ position: "relative" }}>
               <a
                 href="https://github.com/Caarlos3/LET-S-COOK-APP"
@@ -146,17 +160,44 @@ export default function Home() {
                 rel="noopener noreferrer"
                 style={{
                   position: "absolute",
-                  inset: 0, 
+                  inset: 0,
                   zIndex: 2,
                 }}
               />
               <Carousel
+                items={cookAppItems}
                 baseWidth={300}
                 autoplay={true}
                 autoplayDelay={2000}
                 pauseOnHover={true}
                 loop={true}
                 round={false}
+                title="LET'S COOK APP"
+                tags={["Python", "React", "OpenAI API"]}
+              />
+            </div>
+            <div style={{ position: "relative" }}>
+              <a
+                href="https://github.com/Juandomz91/Can-cargol/tree/Reservas"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  position: "absolute",
+                  inset: 0,
+                  zIndex: 2,
+                }}
+              />
+              <Carousel
+                items={canCargolItems}
+                baseWidth={300}
+                style={{ position: "relative", height:"2220px" }}
+                autoplay={true}
+                autoplayDelay={2000}
+                pauseOnHover={true}
+                loop={true}
+                round={false}
+                title="CAN CARGOL"
+                tags={["React", "Node.js", "SQL", "Python"]}
               />
             </div>
           </div>
@@ -166,7 +207,6 @@ export default function Home() {
           <h1 style={{ fontFamily: "Impact" }}>Contact</h1>
         </div>
         <div className="contact-container">
-        
           <div>
             <form
               style={{ fontFamily: "Impact" }}

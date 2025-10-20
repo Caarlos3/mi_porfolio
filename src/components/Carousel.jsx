@@ -25,6 +25,78 @@ const VELOCITY_THRESHOLD = 500;
 const GAP = 16;
 const SPRING_OPTIONS = { type: "spring", stiffness: 300, damping: 30 };
 
+function CarouselItem({
+  index,
+  item,
+  x,
+  trackItemOffset,
+  itemWidth,
+  round,
+  transition,
+  title,
+  tags,
+}) {
+  const range = [
+    -(index + 1) * trackItemOffset,
+    -index * trackItemOffset,
+    -(index - 1) * trackItemOffset,
+  ];
+  const outputRange = [90, 0, -90];
+  const rotateY = useTransform(x, range, outputRange, { clamp: false });
+
+  return (
+    <motion.div
+      className={`carousel-item ${round ? "round" : ""}`}
+      style={{
+        width: itemWidth,
+        height: round ? itemWidth : "100%",
+        rotateY,
+        ...(round && { borderRadius: "50%" }),
+      }}
+      transition={transition}
+    >
+      <img
+        src={item.src}
+        alt={item.alt}
+        className={`carousel-image ${round ? "round-image" : ""}`}
+      />
+      {title && (
+        <h4
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            fontFamily: "Impact",
+            fontSize: "16px",
+            width: "100%",
+            height: "10px",
+          }}
+        >
+          {title}
+        </h4>
+      )}
+      {Array.isArray(tags) && tags.length > 0 && (
+        <div
+          style={{
+            display: "flex",
+            gap: "10px",
+            alignItems: "center",
+            justifyContent: "center",
+            width: "100%",
+            height: "15px",
+            fontFamily: "Impact",
+            fontSize: "12px",
+          }}
+        >
+          {tags.map((t) => (
+            <p key={t}>{t}</p>
+          ))}
+        </div>
+      )}
+    </motion.div>
+  );
+}
+
 export default function Carousel({
   items = DEFAULT_ITEMS,
   baseWidth = 300,
@@ -33,6 +105,8 @@ export default function Carousel({
   pauseOnHover = false,
   loop = false,
   round = false,
+  title,
+  tags,
 }) {
   const containerPadding = 16;
   const itemWidth = baseWidth - containerPadding * 2;
@@ -45,6 +119,7 @@ export default function Carousel({
   const [isResetting, setIsResetting] = useState(false);
 
   const containerRef = useRef(null);
+
   useEffect(() => {
     if (pauseOnHover && containerRef.current) {
       const container = containerRef.current;
@@ -149,59 +224,22 @@ export default function Carousel({
         transition={effectiveTransition}
         onAnimationComplete={handleAnimationComplete}
       >
-        {carouselItems.map((item, index) => {
-          const range = [
-            -(index + 1) * trackItemOffset,
-            -index * trackItemOffset,
-            -(index - 1) * trackItemOffset,
-          ];
-          const outputRange = [90, 0, -90];
-          // eslint-disable-next-line react-hooks/rules-of-hooks
-          const rotateY = useTransform(x, range, outputRange, { clamp: false });
-          return (
-            <motion.div
-              key={index}
-              className={`carousel-item ${round ? "round" : ""}`}
-              style={{
-                width: itemWidth,
-                height: round ? itemWidth : "100%",
-                rotateY: rotateY,
-                ...(round && { borderRadius: "50%" }),
-              }}
-              transition={effectiveTransition}
-            >
-              <img
-                src={item.src}
-                alt={item.alt}
-                className={`carousel-image ${round ? "round-image" : ""}`}
-              />
-              <h4 style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontFamily: "Impact",
-                fontSize: "16px",
-                width: "100%",
-                height: "10px"
-              }}>LET'S COOK APP</h4>
-              <div style={{ 
-                display: "flex",
-                gap: "10px",
-                alignItems: "center",
-                justifyContent: "center",
-                width: "100%",
-                height: "15px",
-                fontFamily: "Impact",
-                fontSize: "12px",
-              }}>
-              <p>Python</p>
-              <p>React</p>
-              <p>OpenAI API</p>
-              </div>
-            </motion.div>
-          );
-        })}
+        {carouselItems.map((item, index) => (
+          <CarouselItem
+            key={item.id ?? index}
+            index={index}
+            item={item}
+            x={x}
+            trackItemOffset={trackItemOffset}
+            itemWidth={itemWidth}
+            round={round}
+            transition={effectiveTransition}
+            title={title}
+            tags={tags}
+          />
+        ))}
       </motion.div>
+
       <div className={`carousel-indicators-container ${round ? "round" : ""}`}>
         <div className="carousel-indicators">
           {items.map((_, index) => (
