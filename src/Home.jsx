@@ -20,6 +20,12 @@ const canCargolItems = [
   { id: 5, src: "/Can-caragol5.png", alt: "Can Cargol 5" },
 ];
 
+const fitItems = [
+  { id: 1, src: "/fit1.png", alt: "Fit App 1" },
+  { id: 2, src: "/fit2.png", alt: "Fit App 2" },
+  { id: 3, src: "/fit3.png", alt: "Fit App 3" },
+  { id: 4, src: "/fit4.png", alt: "Fit App 4" },
+]
 export default function Home() {
   const form = useRef();
   const sendEmail = (e) => {
@@ -152,9 +158,9 @@ export default function Home() {
 
         <div id="projects">
           <h1 style={{ fontFamily: "Impact" }}>Projects</h1>
-          <div style={{ display: "flex", gap: "30px" }}>
+          <div style={{ display: "flex", gap: "30px", flexWrap: "wrap" }}>
             <div style={{ position: "relative" }}>
-              <a
+             <a
                 href="https://github.com/Caarlos3/LET-S-COOK-APP"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -190,7 +196,6 @@ export default function Home() {
               <Carousel
                 items={canCargolItems}
                 baseWidth={300}
-                style={{ position: "relative", height:"2220px" }}
                 autoplay={true}
                 autoplayDelay={2000}
                 pauseOnHover={true}
@@ -198,6 +203,29 @@ export default function Home() {
                 round={false}
                 title="CAN CARGOL"
                 tags={["React", "Node.js", "SQL", "Python"]}
+              />
+            </div>
+            <div style={{ position: "relative" }}>
+             <a
+                href="https://github.com/Caarlos3/LET-S_FIT_APP"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  position: "absolute",
+                  inset: 0,
+                  zIndex: 2,
+                }}
+              />
+              <Carousel
+                items={fitItems}
+                baseWidth={300}
+                autoplay={true}
+                autoplayDelay={2000}
+                pauseOnHover={true}
+                loop={true}
+                round={false}
+                title="LET'S FIT APP"
+                tags={["Python", "React", "OpenAI API","Flask"]}
               />
             </div>
           </div>
