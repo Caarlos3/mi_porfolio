@@ -1,18 +1,34 @@
 import React from "react";
 import TrueFocus from "./components/TrueFocus";
 import "./components/TrueFocus.css";
+import { useNavigate, useLocation } from "react-router-dom";
 
 export default function Navbar() {
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const scrollToSection = (id) => {
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
+    
+    if (location.pathname === "/") {
+      const section = document.getElementById(id);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      
+      navigate("/");
+      setTimeout(() => {
+        const section = document.getElementById(id);
+        if (section) {
+          section.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100); 
     }
   };
+
   return (
     <nav className="navbar col-12 col-md-12 col-lg-12">
-      <div>
+      <div style={{ cursor: "pointer" }} onClick={() => navigate("/")}>  
         <TrueFocus
           sentence="Caarlos Dev"
           manualMode={false}
@@ -36,19 +52,19 @@ export default function Navbar() {
         >
           About
         </button>
-          <button
-            onClick={() => scrollToSection("projects")}
-            style={{
-              borderRadius: "20px",
-              background: "none",
-              color: "white",
-              borderColor: "#44bcad",
-              boxShadow: "4px 3px 0 0",
-              fontFamily: "Impact",
-            }}
-          >
-            Projects
-          </button>
+        <button
+          onClick={() => scrollToSection("projects")}
+          style={{
+            borderRadius: "20px",
+            background: "none",
+            color: "white",
+            borderColor: "#44bcad",
+            boxShadow: "4px 3px 0 0",
+            fontFamily: "Impact",
+          }}
+        >
+          Projects
+        </button>
         <button
           onClick={() => scrollToSection("contact")}
           style={{

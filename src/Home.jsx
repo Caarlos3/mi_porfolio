@@ -4,7 +4,7 @@ import Silk from "./components/Silk";
 import "./index.css";
 import ProfileCard from "./components/ProfileCard";
 import Carousel from "./components/Carousel";
-import Navbar from "./Navbar";
+import { useNavigate } from "react-router-dom";
 
 const cookAppItems = [
   { id: 1, src: "/home-app-cook.png", alt: "Home App Cook" },
@@ -27,6 +27,7 @@ const fitItems = [
   { id: 4, src: "/fit4.png", alt: "Fit App 4" },
 ]
 export default function Home() {
+  const navigate = useNavigate();
   const form = useRef();
   const sendEmail = (e) => {
     e.preventDefault();
@@ -50,7 +51,7 @@ export default function Home() {
 
   return (
     <>
-      <Navbar />
+      
       <Silk
         speed={5}
         scale={1}
@@ -59,7 +60,7 @@ export default function Home() {
         rotation={0}
       />
 
-      <div className="home-container" id="about-me">
+      <div className="home-container section" id="about-me">
         <div className="home-content">
           <div className="about-me">
             <h1 style={{ fontFamily: "Impact" }}>About me</h1>
@@ -156,18 +157,17 @@ export default function Home() {
           </div>
         </div>
 
-        <div id="projects">
+        <div className="section" id="projects">
           <h1 style={{ fontFamily: "Impact" }}>Projects</h1>
           <div style={{ display: "flex", gap: "30px", flexWrap: "wrap" }}>
             <div style={{ position: "relative" }}>
              <a
-                href="https://github.com/Caarlos3/LET-S-COOK-APP"
-                target="_blank"
-                rel="noopener noreferrer"
+                onClick={() => navigate("/project/lets-cook-app")}
                 style={{
                   position: "absolute",
                   inset: 0,
                   zIndex: 2,
+                  cursor: "pointer"
                 }}
               />
               <Carousel
@@ -184,13 +184,12 @@ export default function Home() {
             </div>
             <div style={{ position: "relative" }}>
               <a
-                href="https://github.com/Juandomz91/Can-cargol/tree/Reservas"
-                target="_blank"
-                rel="noopener noreferrer"
+                onClick={() => navigate("/project/can-cargol")}
                 style={{
                   position: "absolute",
                   inset: 0,
                   zIndex: 2,
+                  cursor: "pointer"
                 }}
               />
               <Carousel
@@ -207,13 +206,12 @@ export default function Home() {
             </div>
             <div style={{ position: "relative" }}>
              <a
-                href="https://github.com/Caarlos3/LET-S_FIT_APP"
-                target="_blank"
-                rel="noopener noreferrer"
+                onClick={() => navigate("/project/fit-app")}
                 style={{
                   position: "absolute",
                   inset: 0,
                   zIndex: 2,
+                  cursor: "pointer"
                 }}
               />
               <Carousel
@@ -231,7 +229,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div id="contact">
+        <div className="section" id="contact">
           <h1 style={{ fontFamily: "Impact" }}>Contact</h1>
         </div>
         <div className="contact-container">
@@ -271,7 +269,7 @@ export default function Home() {
           </div>
         </div>
         <footer>
-          <p style={{ fontFamily: "Impact" }}>
+          <p style={{ fontFamily: "Impact", fontSize: "18px" }}>
             © 2025 Carlos Ramírez Torres. All rights reserved.
           </p>
         </footer>
