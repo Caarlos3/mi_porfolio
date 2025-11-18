@@ -6,9 +6,9 @@ export default function Qualifications() {
   return (
     <div>
       <Silk />
-      <div id="qualifications" style={{ padding: "2rem", color: "white"}}>
-        <h2 style={{padding:"50px", fontFamily: "impact"}}>Títulos Académicos</h2>
-        <div>
+      <div id="qualifications" style={{ padding: "5rem", color: "white"}}>
+        
+        <div style={{ marginTop: "2rem", textAlign: "center" }}>
             <img style={{width:"600px", margin: "50px",maxWidth: "100%"}} src="/4geeks.png" alt="full" />
             
             <img style={{width:"600px", margin: "50px",maxWidth:"100%"}} src="/Java-Titulo.png" alt="Java" />
