@@ -114,8 +114,9 @@ export default function Home() {
               </ul>
             </div>
           </div>
-          <div>
+          <div style={{ marginTop: "60px" }}>
             <ProfileCard
+              
               name="Carlos Ramírez Torres"
               title="Full Stack Developer"
               handle="CaarlosDev"

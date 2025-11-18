@@ -307,3 +307,44 @@ body{
   opacity: 0.6;
   transform: translate(10px, -10px);
 }
+
+
+.link-button {
+  cursor: pointer;
+  position: relative;
+  padding: 10px 24px;
+  font-size: 18px;
+  color: white;
+  border: 2px solid white;
+  background: transparent;
+  border-radius: 20px;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  overflow: hidden;
+}
+
+.link-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 50px;
+  height: 50px;
+  border-radius: inherit;
+  scale: 0;
+  
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.link-button:hover::before {
+  scale: 3;
+}
+
+.link-button:hover {
+  color: #44bcad;
+  scale: 1.1;
+  box-shadow: 0 0 20px #44bcad;
+}
+.link-button:active {
+  scale: 1;
+}
