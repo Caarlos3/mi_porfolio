@@ -26,6 +26,11 @@ const fitItems = [
   { id: 3, src: "/fit3.png", alt: "Fit App 3" },
   { id: 4, src: "/fit4.png", alt: "Fit App 4" },
 ]
+
+const mangaBiblItems = [
+  { id: 1, src: "/fotomanga.png", alt: "Manga Bibl 1" },
+  { id: 2, src: "/fotomanga1.png", alt: "Manga Bibl 2" },
+]
 export default function Home() {
   const navigate = useNavigate();
   const form = useRef();
@@ -225,6 +230,28 @@ export default function Home() {
                 round={false}
                 title="LET'S FIT APP"
                 tags={["Python", "React", "OpenAI API","Flask"]}
+              />
+            </div>
+            <div style={{ position: "relative" }}>
+             <a
+                onClick={() => navigate("/project/manga-bibl")}
+                style={{
+                  position: "absolute",
+                  inset: 0,
+                  zIndex: 2,
+                  cursor: "pointer"
+                }}
+              />
+              <Carousel
+                items={mangaBiblItems}
+                baseWidth={300}
+                autoplay={true}
+                autoplayDelay={2000}
+                pauseOnHover={true}
+                loop={true}
+                round={false}
+                title="MANGA-BIBL"
+                tags={["Java", "React", "JWT", "API REST"]}
               />
             </div>
           </div>

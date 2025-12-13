@@ -6,6 +6,7 @@ import InfoCook from "./InfoCook";
 import InfoCaragol from "./InfoCaragol";
 import InfoFit from "./InfoFit";
 import Qualifications from "./Qualifications";
+import InfoManga from "./InfoManga";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/project/lets-cook-app" element={<InfoCook />} />
           <Route path="/project/can-cargol" element={<InfoCaragol />} />
           <Route path="/project/fit-app" element={<InfoFit />} />
+          <Route path="/project/manga-bibl" element={<InfoManga />} />
           <Route path="/qualifications" element={<Qualifications />} />
         </Routes>
       </div>
