@@ -109,7 +109,7 @@ export default function Home() {
                   <span></span>
                   <span></span>
                   <span></span>
-                  <a href="/CarlosCV2025.pdf" download>
+                  <a href="/CarlosRamirezCV2025.pdf" download>
                     <i
                       className="fa-solid fa-file-arrow-down svg"
                       aria-label="Descargar CV"
