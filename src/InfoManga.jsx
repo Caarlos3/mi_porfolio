@@ -20,25 +20,22 @@ function InfoManga() {
           style={{ marginRight: "15px" }}
           onClick={() =>
             window.open(
-              "https://github.com/Caarlos3/Mangapp",
+              "https://github.com/Caarlos3/MANGA.BIBL-FULLSTACK",
               "_blank"
             )
           }
         >
-          <i class="fa-brands fa-github"></i> GitHub Back
+          <i class="fa-brands fa-github"></i> GitHub
         </button>
         <button
           className="link-button"
           onClick={() =>
-            window.open(
-              "https://github.com/Caarlos3/Mangaapp-front",
-              "_blank"
-            )
+            window.open("https://manga-bibl-fullstack.vercel.app/", "_blank")
           }
         >
-          <i class="fa-brands fa-github"></i> GitHub Front
+          <i class="fa-solid fa-globe"></i> WEB
         </button>
-
+       
         <p
           style={{
             fontFamily: "Arial",
