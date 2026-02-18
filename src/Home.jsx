@@ -76,12 +76,9 @@ export default function Home() {
                 width: "100%",
               }}
             >
-              Mi nombre es Carlos Ramírez Torres, Full Stack Developer.
+              Hi, my name is Carlos Ramírez Torres, Full Stack Developer & Aspiring Ai Developer.
               <br />
-              Me apasiona crear aplicaciones web para la resolución de problemas
-              y mejora de la vida diaria. Mi experiencia se centra en el
-              desarrollo de aplicaciones utilizando tecnologías como React,
-              Javascript, Java, Node.js, Python, Flask, OpenAI API y SQL.
+              I am passionate about building functional, scalable, and well-structured web applications that solve problems and enhance daily life. With a strong technical foundation in React, JavaScript, Java, Node.js, Python, FastAPI, Flask, and SQL. I ensure code reliability through unit testing with Jest and Pytest. My expertise has evolved beyond traditional CRUD applications; I am currently deep-diving into AI Orchestration and Agentic Workflows, leveraging the OpenAI API to build intelligent, autonomous systems.
             </p>
 
             <div className="card-urls">
