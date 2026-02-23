@@ -180,14 +180,21 @@ export default function Home() {
           <div style={{ display: "flex", gap: "30px", flexWrap: "wrap", justifyContent: "center" }}>
             <div style={{ position: "relative" }}>
               <a
-                onClick={() => navigate("/project/lets-cook-app")}
+                href="/project/lets-cook-app"
+                aria-label="View Let's Cook App project details"
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigate("/project/lets-cook-app");
+                }}
                 style={{
                   position: "absolute",
                   inset: 0,
                   zIndex: 2,
                   cursor: "pointer"
                 }}
-              />
+              >
+                <span style={{ display: "none" }}>Let's Cook App</span>
+              </a>
               <Carousel
                 items={cookAppItems}
                 baseWidth={300}
@@ -202,14 +209,21 @@ export default function Home() {
             </div>
             <div style={{ position: "relative" }}>
               <a
-                onClick={() => navigate("/project/can-cargol")}
+                href="/project/can-cargol"
+                aria-label="View Can Cargol project details"
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigate("/project/can-cargol");
+                }}
                 style={{
                   position: "absolute",
                   inset: 0,
                   zIndex: 2,
                   cursor: "pointer"
                 }}
-              />
+              >
+                <span style={{ display: "none" }}>Can Cargol</span>
+              </a>
               <Carousel
                 items={canCargolItems}
                 baseWidth={300}
@@ -224,14 +238,21 @@ export default function Home() {
             </div>
             <div style={{ position: "relative" }}>
               <a
-                onClick={() => navigate("/project/fit-app")}
+                href="/project/fit-app"
+                aria-label="View Let's Fit App project details"
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigate("/project/fit-app");
+                }}
                 style={{
                   position: "absolute",
                   inset: 0,
                   zIndex: 2,
                   cursor: "pointer"
                 }}
-              />
+              >
+                <span style={{ display: "none" }}>Let's Fit App</span>
+              </a>
               <Carousel
                 items={fitItems}
                 baseWidth={300}
@@ -246,14 +267,21 @@ export default function Home() {
             </div>
             <div style={{ position: "relative" }}>
               <a
-                onClick={() => navigate("/project/manga-bibl")}
+                href="/project/manga-bibl"
+                aria-label="View Manga Bibl project details"
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigate("/project/manga-bibl");
+                }}
                 style={{
                   position: "absolute",
                   inset: 0,
                   zIndex: 2,
                   cursor: "pointer"
                 }}
-              />
+              >
+                <span style={{ display: "none" }}>Manga Bibl</span>
+              </a>
               <Carousel
                 items={mangaBiblItems}
                 baseWidth={300}
