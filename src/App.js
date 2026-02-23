@@ -7,22 +7,25 @@ import InfoCaragol from "./InfoCaragol";
 import InfoFit from "./InfoFit";
 import Qualifications from "./Qualifications";
 import InfoManga from "./InfoManga";
+import { ReactLenis } from 'lenis/react';
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/project/lets-cook-app" element={<InfoCook />} />
-          <Route path="/project/can-cargol" element={<InfoCaragol />} />
-          <Route path="/project/fit-app" element={<InfoFit />} />
-          <Route path="/project/manga-bibl" element={<InfoManga />} />
-          <Route path="/qualifications" element={<Qualifications />} />
-        </Routes>
-      </div>
-    </Router>
+    <ReactLenis root options={{ lerp: 0.05, duration: 1.5, smoothWheel: true }}>
+      <Router>
+        <div className="App">
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/project/lets-cook-app" element={<InfoCook />} />
+            <Route path="/project/can-cargol" element={<InfoCaragol />} />
+            <Route path="/project/fit-app" element={<InfoFit />} />
+            <Route path="/project/manga-bibl" element={<InfoManga />} />
+            <Route path="/qualifications" element={<Qualifications />} />
+          </Routes>
+        </div>
+      </Router>
+    </ReactLenis>
   );
 }
 
