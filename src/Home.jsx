@@ -314,7 +314,7 @@ export default function Home() {
                 onSubmit={sendEmail}
                 style={{ alignItems: "stretch", width: "100%", maxWidth: "600px" }}
               >
-                <label htmlFor="user_name" style={{ fontFamily: "Inter", fontWeight: "600", fontSize: "1rem", textAlign: "left", marginBottom: "8px" }}>Name</label>
+                <label htmlFor="user_name" style={{ fontWeight: "600", fontSize: "1rem", textAlign: "left", marginBottom: "8px" }}>Name</label>
                 <input
                   type="text"
                   id="user_name"
@@ -323,7 +323,7 @@ export default function Home() {
                   required
                   style={{ textAlign: "left", padding: "14px", borderRadius: "12px", background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)", marginBottom: "20px" }}
                 />
-                <label htmlFor="user_email" style={{ fontFamily: "Inter", fontWeight: "600", fontSize: "1rem", textAlign: "left", marginBottom: "8px" }}>Email</label>
+                <label htmlFor="user_email" style={{ fontWeight: "600", fontSize: "1rem", textAlign: "left", marginBottom: "8px" }}>Email</label>
                 <input
                   type="text"
                   id="user_email"
@@ -332,7 +332,7 @@ export default function Home() {
                   required
                   style={{ textAlign: "left", padding: "14px", borderRadius: "12px", background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)", marginBottom: "20px" }}
                 />
-                <label htmlFor="message" style={{ fontFamily: "Inter", fontWeight: "600", fontSize: "1rem", textAlign: "left", marginBottom: "8px" }}>Message</label>
+                <label htmlFor="message" style={{ fontWeight: "600", fontSize: "1rem", textAlign: "left", marginBottom: "8px" }}>Message</label>
                 <textarea
                   id="message"
                   name="message"
