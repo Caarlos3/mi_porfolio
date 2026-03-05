@@ -15,7 +15,6 @@ const ChatBubble = () => {
   const handleSendMessage = async () => {
     if (input.trim() === "") return;
 
-    // Generamos un ID único al azar para evitar el error de las keys
     const userMsgId = Math.random().toString(36).substr(2, 9);
     const userMessage = { id: userMsgId, text: input, sender: "user" };
 
@@ -40,9 +39,14 @@ const ChatBubble = () => {
       let done = false;
       let aiText = "";
 
-      // ID único para el mensaje de la IA
       const aiMsgId = Math.random().toString(36).substr(2, 9);
       setMessages((prev) => [...prev, { id: aiMsgId, text: "", sender: "ai" }]);
+
+      const updateAIMessage = (currentMessages, id, newText) => {
+        return currentMessages.map((msg) =>
+          msg.id === id ? { ...msg, text: newText } : msg
+        );
+      };
 
       while (!done) {
         const { value, done: streamDone } = await reader.read();
@@ -50,9 +54,7 @@ const ChatBubble = () => {
         if (value) {
           const chunk = decoder.decode(value, { stream: true });
           aiText += chunk;
-          setMessages((prev) =>
-            prev.map((msg) => msg.id === aiMsgId ? { ...msg, text: aiText } : msg)
-          );
+          setMessages((prev) => updateAIMessage(prev, aiMsgId, aiText));
         }
       }
     } catch (error) {
@@ -74,7 +76,6 @@ const ChatBubble = () => {
 
       {isOpen && (
         <div className="chat-window">
-          {/* Header */}
           <div className="chat-header">
             <div className="chat-header-info">
               <img src="/mi-foto.png" alt="Avatar" className="chat-avatar" />
@@ -85,7 +86,6 @@ const ChatBubble = () => {
             </div>
           </div>
 
-          {/* Área de mensajes */}
           <div className="chat-messages">
             {messages.length === 0 && (
               <div style={{ textAlign: "center", color: "rgba(255,255,255,0.4)", marginTop: "20px", fontSize: "0.9rem" }}>
@@ -108,7 +108,6 @@ const ChatBubble = () => {
             <div ref={messagesEndRef} />
           </div>
 
-          {/* Input container */}
           <div className="chat-input-container">
             <input
               className="chat-input"
