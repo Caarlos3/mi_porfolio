@@ -42,19 +42,23 @@ const ChatBubble = () => {
       const aiMsgId = Math.random().toString(36).substr(2, 9);
       setMessages((prev) => [...prev, { id: aiMsgId, text: "", sender: "ai" }]);
 
-      const updateAIMessage = (currentMessages, id, newText) => {
-        return currentMessages.map((msg) =>
-          msg.id === id ? { ...msg, text: newText } : msg
-        );
-      };
-
       while (!done) {
         const { value, done: streamDone } = await reader.read();
         done = streamDone;
         if (value) {
           const chunk = decoder.decode(value, { stream: true });
           aiText += chunk;
-          setMessages((prev) => updateAIMessage(prev, aiMsgId, aiText));
+          
+          // TRUCO MAESTRO: Usamos una variable intermedia para evitar la función flecha dentro del loop
+          const currentAiText = aiText; 
+          setMessages((prev) => {
+            const newMessages = [...prev];
+            const index = newMessages.findIndex(m => m.id === aiMsgId);
+            if (index !== -1) {
+              newMessages[index] = { ...newMessages[index], text: currentAiText };
+            }
+            return newMessages;
+          });
         }
       }
     } catch (error) {
@@ -93,10 +97,7 @@ const ChatBubble = () => {
               </div>
             )}
             {messages.map((msg) => (
-              <div
-                key={msg.id}
-                className={`chat-bubble chat-bubble-${msg.sender}`}
-              >
+              <div key={msg.id} className={`chat-bubble chat-bubble-${msg.sender}`}>
                 {msg.text}
               </div>
             ))}
