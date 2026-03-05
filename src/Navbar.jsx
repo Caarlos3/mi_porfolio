@@ -45,7 +45,6 @@ export default function Navbar() {
             color: "white",
             borderColor: "#44bcad",
             boxShadow: "4px 3px 0 0",
-            fontFamily: "Impact",
           }}
         >
           Projects
@@ -58,7 +57,6 @@ export default function Navbar() {
             color: "white",
             borderColor: "#44bcad",
             boxShadow: "4px 3px 0 0",
-            fontFamily: "Impact",
           }}
         >
           Qualifications
@@ -71,7 +69,6 @@ export default function Navbar() {
             color: "white",
             borderColor: "#44bcad",
             boxShadow: "4px 3px 0 0",
-            fontFamily: "Impact",
           }}
         >
           Contact

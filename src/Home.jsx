@@ -6,6 +6,7 @@ import ProfileCard from "./components/ProfileCard";
 import Carousel from "./components/Carousel";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import ChatBubble from "./Chatbubble";
 
 const cookAppItems = [
   { id: 1, src: "/home-app-cook.png", alt: "Home App Cook" },
@@ -347,6 +348,8 @@ export default function Home() {
             </div>
           </div>
         </motion.div>
+
+        <ChatBubble />
 
         <footer style={{ marginTop: '20px', marginBottom: '40px', width: "100%", textAlign: "center" }}>
           <p className="ag-font" style={{ fontSize: "16px", color: "rgba(255,255,255,0.5)" }}>
