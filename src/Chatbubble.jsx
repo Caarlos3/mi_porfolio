@@ -48,9 +48,9 @@ const ChatBubble = () => {
         if (value) {
           const chunk = decoder.decode(value, { stream: true });
           aiText += chunk;
-          
+
           // TRUCO MAESTRO: Usamos una variable intermedia para evitar la función flecha dentro del loop
-          const currentAiText = aiText; 
+          const currentAiText = aiText;
           setMessages((prev) => {
             const newMessages = [...prev];
             const index = newMessages.findIndex(m => m.id === aiMsgId);
@@ -90,7 +90,7 @@ const ChatBubble = () => {
             </div>
           </div>
 
-          <div className="chat-messages">
+          <div className="chat-messages" data-lenis-prevent>
             {messages.length === 0 && (
               <div style={{ textAlign: "center", color: "rgba(255,255,255,0.4)", marginTop: "20px", fontSize: "0.9rem" }}>
                 ¡Hola! Pregúntame sobre la experiencia, habilidades o proyectos de Carlos.
