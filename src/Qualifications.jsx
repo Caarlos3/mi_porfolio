@@ -40,6 +40,28 @@ export default function Qualifications() {
 
           <motion.div
             className="ag-section-card"
+            variants={variantLeft}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.2 }}
+            style={{ display: "flex", justifyContent: "center", maxWidth: "800px" }}
+          >
+            <img style={{ width: "100%", borderRadius: "20px" }} src="/ML1.png" alt="Python" />
+          </motion.div>
+
+          <motion.div
+            className="ag-section-card"
+            variants={variantLeft}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.2 }}
+            style={{ display: "flex", justifyContent: "center", maxWidth: "800px" }}
+          >
+            <img style={{ width: "100%", borderRadius: "20px" }} src="/Web-Scraping.png" alt="Python" />
+          </motion.div>
+          
+          <motion.div
+            className="ag-section-card"
             variants={variantRight}
             initial="hidden"
             whileInView="visible"
@@ -60,16 +82,7 @@ export default function Qualifications() {
             <img style={{ width: "100%", borderRadius: "20px" }} src="/Python-Titulo.png" alt="Python" />
           </motion.div>
 
-          <motion.div
-            className="ag-section-card"
-            variants={variantLeft}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: false, amount: 0.2 }}
-            style={{ display: "flex", justifyContent: "center", maxWidth: "800px" }}
-          >
-            <img style={{ width: "100%", borderRadius: "20px" }} src="/Web-Scraping.png" alt="Python" />
-          </motion.div>
+
 
         </div>
       </div>

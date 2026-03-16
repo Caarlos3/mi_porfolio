@@ -208,35 +208,7 @@ export default function Home() {
                 tags={["Python", "React", "OpenAI API"]}
               />
             </div>
-            <div style={{ position: "relative" }}>
-              <a
-                href="/project/can-cargol"
-                aria-label="View Can Cargol project details"
-                onClick={(e) => {
-                  e.preventDefault();
-                  navigate("/project/can-cargol");
-                }}
-                style={{
-                  position: "absolute",
-                  inset: 0,
-                  zIndex: 2,
-                  cursor: "pointer"
-                }}
-              >
-                <span style={{ display: "none" }}>Can Cargol</span>
-              </a>
-              <Carousel
-                items={canCargolItems}
-                baseWidth={300}
-                autoplay={true}
-                autoplayDelay={2000}
-                pauseOnHover={true}
-                loop={true}
-                round={false}
-                title="CAN CARGOL"
-                tags={["React", "Node.js", "SQL", "Python"]}
-              />
-            </div>
+           
             <div style={{ position: "relative" }}>
               <a
                 href="/project/fit-app"
