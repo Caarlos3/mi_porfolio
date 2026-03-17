@@ -14,13 +14,6 @@ const cookAppItems = [
   { id: 3, src: "/recipe-view.png", alt: "Recipe view App Cook" },
 ];
 
-const canCargolItems = [
-  { id: 1, src: "/Can-Caragol1.png", alt: "Can Cargol 1" },
-  { id: 2, src: "/Can-caragol2.png", alt: "Can Cargol 2" },
-  { id: 3, src: "/Can-caragol3.png", alt: "Can Cargol 3" },
-  { id: 4, src: "/Can-caragol4.png", alt: "Can Cargol 4" },
-  { id: 5, src: "/Can-caragol5.png", alt: "Can Cargol 5" },
-];
 
 const fitItems = [
   { id: 1, src: "/fit1.png", alt: "Fit App 1" },
