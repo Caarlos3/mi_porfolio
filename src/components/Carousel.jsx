@@ -33,8 +33,6 @@ function CarouselItem({
   itemWidth,
   round,
   transition,
-  title,
-  tags,
 }) {
   const range = [
     -(index + 1) * trackItemOffset,
@@ -60,39 +58,6 @@ function CarouselItem({
         alt={item.alt}
         className={`carousel-image ${round ? "round-image" : ""}`}
       />
-      {title && (
-        <h4
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            fontFamily: "Impact",
-            fontSize: "16px",
-            width: "100%",
-            height: "10px",
-          }}
-        >
-          {title}
-        </h4>
-      )}
-      {Array.isArray(tags) && tags.length > 0 && (
-        <div
-          style={{
-            display: "flex",
-            gap: "10px",
-            alignItems: "center",
-            justifyContent: "center",
-            width: "100%",
-            height: "15px",
-            fontFamily: "Impact",
-            fontSize: "12px",
-          }}
-        >
-          {tags.map((t) => (
-            <p key={t}>{t}</p>
-          ))}
-        </div>
-      )}
     </motion.div>
   );
 }
@@ -105,8 +70,6 @@ export default function Carousel({
   pauseOnHover = false,
   loop = false,
   round = false,
-  title,
-  tags,
 }) {
   const containerPadding = 16;
   const itemWidth = baseWidth - containerPadding * 2;
@@ -234,8 +197,6 @@ export default function Carousel({
             itemWidth={itemWidth}
             round={round}
             transition={effectiveTransition}
-            title={title}
-            tags={tags}
           />
         ))}
       </motion.div>

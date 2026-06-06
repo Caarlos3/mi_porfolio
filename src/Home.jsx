@@ -3,7 +3,7 @@ import emailjs from "@emailjs/browser";
 import Silk from "./components/Silk";
 import "./index.css";
 import ProfileCard from "./components/ProfileCard";
-import Carousel from "./components/Carousel";
+import ProjectCard from "./components/ProjectCard";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import ChatBubble from "./Chatbubble";
@@ -172,94 +172,29 @@ export default function Home() {
         >
           <h1 className="ag-heading">Projects</h1>
           <div style={{ display: "flex", gap: "30px", flexWrap: "wrap", justifyContent: "center" }}>
-            <div style={{ position: "relative" }}>
-              <a
-                href="/project/lets-cook-app"
-                aria-label="View Let's Cook App project details"
-                onClick={(e) => {
-                  e.preventDefault();
-                  navigate("/project/lets-cook-app");
-                }}
-                style={{
-                  position: "absolute",
-                  inset: 0,
-                  zIndex: 2,
-                  cursor: "pointer"
-                }}
-              >
-                <span style={{ display: "none" }}>Let's Cook App</span>
-              </a>
-              <Carousel
-                items={cookAppItems}
-                baseWidth={300}
-                autoplay={true}
-                autoplayDelay={2000}
-                pauseOnHover={true}
-                loop={true}
-                round={false}
-                title="LET'S COOK APP"
-                tags={["Python", "React", "OpenAI API"]}
-              />
-            </div>
-           
-            <div style={{ position: "relative" }}>
-              <a
-                href="/project/fit-app"
-                aria-label="View Let's Fit App project details"
-                onClick={(e) => {
-                  e.preventDefault();
-                  navigate("/project/fit-app");
-                }}
-                style={{
-                  position: "absolute",
-                  inset: 0,
-                  zIndex: 2,
-                  cursor: "pointer"
-                }}
-              >
-                <span style={{ display: "none" }}>Let's Fit App</span>
-              </a>
-              <Carousel
-                items={fitItems}
-                baseWidth={300}
-                autoplay={true}
-                autoplayDelay={2000}
-                pauseOnHover={true}
-                loop={true}
-                round={false}
-                title="LET'S FIT APP"
-                tags={["Python", "React", "OpenAI API", "Flask"]}
-              />
-            </div>
-            <div style={{ position: "relative" }}>
-              <a
-                href="/project/manga-bibl"
-                aria-label="View Manga Bibl project details"
-                onClick={(e) => {
-                  e.preventDefault();
-                  navigate("/project/manga-bibl");
-                }}
-                style={{
-                  position: "absolute",
-                  inset: 0,
-                  zIndex: 2,
-                  cursor: "pointer"
-                }}
-              >
-                <span style={{ display: "none" }}>Manga Bibl</span>
-              </a>
-              <Carousel
-                items={mangaBiblItems}
-                baseWidth={300}
-                autoplay={true}
-                autoplayDelay={2000}
-                pauseOnHover={true}
-                loop={true}
-                round={false}
-                title="MANGA-BIBL"
-                tags={["Java", "React", "JWT", "API REST"]}
-              />
-            </div>
+            <ProjectCard
+              title="Let's Cook App"
+              tags={["Python", "React", "OpenAI API"]}
+              carouselItems={cookAppItems}
+              autoplayDelay={2000}
+              onNavigate={() => navigate("/project/lets-cook-app")}
+            />
+
+            <ProjectCard
+              title="Let's Fit App"
+              tags={["Python", "React", "OpenAI API", "Flask"]}
+              carouselItems={fitItems}
+              autoplayDelay={2000}
+              onNavigate={() => navigate("/project/fit-app")}
+            />
+
+            <ProjectCard
+              title="Manga Bibl"
+              tags={["Java", "React", "JWT", "API REST"]}
+              carouselItems={mangaBiblItems}
+              autoplayDelay={2000}
+              onNavigate={() => navigate("/project/manga-bibl")}
+            />
           </div>
         </motion.div>
 
