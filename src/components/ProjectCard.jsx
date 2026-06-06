@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import Carousel from "./Carousel";
 import "./ProjectCard.css";
@@ -13,6 +13,22 @@ export default function ProjectCard({
   onNavigate,
 }) {
   const cardRef = useRef(null);
+  const [carouselWidth, setCarouselWidth] = useState(baseWidth);
+
+  useEffect(() => {
+    if (!cardRef.current) return;
+
+    const observer = new ResizeObserver((entries) => {
+      for (let entry of entries) {
+        if (entry.contentRect.width > 0) {
+          setCarouselWidth(entry.contentRect.width);
+        }
+      }
+    });
+
+    observer.observe(cardRef.current);
+    return () => observer.disconnect();
+  }, [baseWidth]);
 
   const handleMouseMove = (e) => {
     if (cardRef.current) {
@@ -38,7 +54,7 @@ export default function ProjectCard({
       <div className="project-card-media">
         <Carousel
           items={carouselItems}
-          baseWidth={baseWidth}
+          baseWidth={carouselWidth}
           autoplay={autoplay}
           autoplayDelay={autoplayDelay}
           pauseOnHover={true}
